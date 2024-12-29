@@ -1,7 +1,5 @@
 import Logo from "../../public/logo.png";
 import Logo_white from "../../public/logo-white.png";
-import { title } from "process";
-import path from "path";
 
 export const IMAGES = {
   Logo,
