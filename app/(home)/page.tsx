@@ -6,7 +6,7 @@ import Feature3 from '../component/home/Feature3'
 
 const HomePage = () => {
   return (
-    <section className='py-20'>
+    <section className='pt-20'>
       <Hero/>
       <Feature1/>
       <Feature2/>
