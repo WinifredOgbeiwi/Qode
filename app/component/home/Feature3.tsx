@@ -17,8 +17,8 @@ const Feature3 = () => {
           <h2 className="text-7xl max-[900px]:text-5xl font-bold">QUIZ HISTORY!</h2>
           <h2 className="max-[900px]:text-2xl text-4xl font-bold mt-4">Track Your Journey!</h2>
           <p className="my-6">
-            Want to see how you've been improving? Our Quiz History feature lets you review past quizzes, track your scores, and monitor your performance over time.
-            <br /> Keep an eye on your progress and see how much you've learned since you started!
+            Want to see how you have been improving? Our Quiz History feature lets you review past quizzes, track your scores, and monitor your performance over time.
+            <br /> Keep an eye on your progress and see how much you have learned since you started!
           </p>
           <ButtonLink href={ROUTES.LOGIN} label="View History" variant="secondary" width="w-full" />
         </div>

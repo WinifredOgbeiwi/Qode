@@ -17,7 +17,7 @@ const Feature4 = () => {
           <h2 className="text-7xl max-[900px]:text-5xl font-bold"> CATEGORIES!</h2>
           <h2 className="max-[900px]:text-2xl text-4xl font-bold mt-4">Pick Your Favorite Category!</h2>
           <p className="my-6">
-            Explore a variety of quiz categories tailored for students like you! Whether you're into coding, tech basics, or digital skills, choose your favorite topics and challenge yourself with quizzes designed to help you learn and grow.
+            Explore a variety of quiz categories tailored for students like you! Whether you are into coding, tech basics, or digital skills, choose your favorite topics and challenge yourself with quizzes designed to help you learn and grow.
             <br/> Explore, learn, and <span className="font-bold text-3xl leading-normal"><span className="border-b-4 border-b-[#9f77fd]">Level Up</span></span> in your favorite tech fields!
           </p>
           <ButtonLink href={ROUTES.LOGIN} label="Start Now" variant="secondary" width="w-full" />

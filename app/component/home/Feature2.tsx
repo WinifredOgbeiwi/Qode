@@ -17,8 +17,8 @@ const Feature2 = () => {
           <h2 className="text-7xl max-[900px]:text-5xl font-bold">LEADERBOARD!</h2>
           <h2 className="max-[900px]:text-2xl text-4xl font-bold mt-4">Climb to the Top!</h2>
           <p className="my-6">
-            Think you're a tech genius? Prove it! Our leaderboard tracks the top quiz scorers, so you can see how you stack up against the best in tech.
-            <br /> Whether you're competing for the <span className="font-bold text-3xl">#1 spot</span> or improving your own scores, the challenge is on!
+            Think you are a tech genius? Prove it! Our leaderboard tracks the top quiz scorers, so you can see how you stack up against the best in tech.
+            <br /> Whether you are competing for the <span className="font-bold text-3xl">#1 spot</span> or improving your own scores, the challenge is on!
           </p>
           <ButtonLink href={ROUTES.LOGIN} label="View Leaderboard" variant="secondary" width="w-full" />
         </div>
