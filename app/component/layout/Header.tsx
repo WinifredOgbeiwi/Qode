@@ -12,7 +12,7 @@ const Header:React.FC = () => {
 
   return (
     <header className="relative" >
-      <div className=" flex text-lg justify-between items-center mt-7 md:my-7 px-8 md:px-20 pb-5 border-b-4 border-black font-semibold sticky z-50 w-full">
+      <div className=" flex text-lg justify-between items-center mt-7 px-8 md:px-20 pb-5 border-b-4 border-black font-semibold sticky z-50 w-full">
         <div className="w-28">
           <Image src={IMAGES.Logo} alt="logo" />
         </div>

@@ -1,3 +1,4 @@
+"use client"
 import { LinkProps } from "@/app/utils/type";
 import Link from "next/link";
 import { useState } from "react";
@@ -18,7 +19,7 @@ const ButtonLink: React.FC<LinkProps> = ({ href, label, variant, width }) => {
           hover ? "bg-[#FFC8E6] border-black" : ""
         }`} >
         <span
-          className={`${hover? "-translate-x-[0.2rem] -translate-y-[0.2rem]" :""} rounded-md block px-5 py-2  border-2 border-black transition-all duration-300 ${
+          className={`${hover? "-translate-x-[0.2rem] -translate-y-[0.2rem]" :""} rounded-md block px-5 py-2 font-bold  border-2 border-black transition-all duration-300 ${
             variant === "primary" ? "bg-pink-400 md:bg-[#4a7eef] text-white" : "bg-white"
           }`} >
           {label}

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lato.className} flex flex-col min-h-screen`}>
         <Header />
-        <main className="flex-1 h-full">{children}</main>
+        <main className="flex-1 h-full bg-[#f8f5ff]">{children}</main>
         <Footer />
       </body>
     </html>
