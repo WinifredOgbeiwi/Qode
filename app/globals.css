@@ -11,3 +11,10 @@
 li{
   list-style-type: none;
 }
+
+.fea1{
+  background-image: url('../public/images/crop.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

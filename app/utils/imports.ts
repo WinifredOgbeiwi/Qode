@@ -1,9 +1,10 @@
 import Logo from "../../public/logo.png";
 import Logo_white from "../../public/logo-white.png";
-
+import ImageHolder from "../../public/images/image-holder.png";
 export const IMAGES = {
   Logo,
   Logo_white,
+  ImageHolder
 };
 
 export const ROUTES = {

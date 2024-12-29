@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Lato } from "next/font/google";
+import { Host_Grotesk } from "next/font/google";
 import Header from "./component/layout/Header";
 import Footer from "./component/layout/Footer";
 
-const lato = Lato({
+const grotesk = Host_Grotesk({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400","600","800"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.className} flex flex-col min-h-screen`}>
+      <body className={`${grotesk.className} flex flex-col min-h-screen`}>
         <Header />
         <main className="flex-1 h-full bg-[#f8f5ff]">{children}</main>
         <Footer />

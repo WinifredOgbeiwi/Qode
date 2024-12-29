@@ -11,7 +11,7 @@ const Hero = () => {
       </h1>
       <p className="my-5 text-xl ">
         Join the fun and put your skills to the test with our interactive
-        quizzes on various topics. Whether you're a trivia enthusiast or just
+        quizzes on various topics. Whether you&#39;re a trivia enthusiast or just
         looking to learn something new, we have a quiz for you!
       </p>
       <ButtonLink href="" label="Get Started" variant="primary" width="w-2/3" />
