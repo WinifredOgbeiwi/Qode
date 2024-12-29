@@ -1,7 +1,11 @@
 import Logo from "../../public/logo.png";
+import Logo_white from "../../public/logo-white.png";
+import { title } from "process";
+import path from "path";
 
 export const IMAGES = {
   Logo,
+  Logo_white,
 };
 
 export const ROUTES = {
@@ -9,7 +13,7 @@ export const ROUTES = {
   HOME: "/",
   ABOUT: "/#about",
   CONTACT: "/#contact",
-  FEATURE:"/#feature",
+  FEATURE: "/#feature",
 
   // AUTHENTICATION
   REGISTER: "/register",
@@ -21,19 +25,58 @@ export const ROUTES = {
   // Protected routes
 };
 
-
-export const NavUrl =[
+export const NavUrl = [
   {
-    path:ROUTES.HOME,
-    label:"Home"
+    path: ROUTES.HOME,
+    label: "Home",
   },
-    {
-    path:ROUTES.ABOUT,
-    label:"About"
+  {
+    path: ROUTES.ABOUT,
+    label: "About",
   },
-     {
-    path:ROUTES.FEATURE,
-    label:"Features"
+  {
+    path: ROUTES.FEATURE,
+    label: "Features",
   },
-   
-]
+];
+
+export const FooterUrl = [
+  {
+    title: "Quick Links",
+    links: [
+      {
+        path: ROUTES.HOME,
+        label: "Home",
+      },
+      {
+        path: ROUTES.ABOUT,
+        label: "About",
+      },
+      {
+        path: ROUTES.FEATURE,
+        label: "Features",
+      },
+      {
+        path: ROUTES.LOGIN,
+        label: "Login",
+      },
+      {
+        path: ROUTES.REGISTER,
+        label: "Register",
+      },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      {
+        path: "/privacy-policy",
+        label: "Privacy Policy",
+      },
+      {
+        path: "/terms-of-service",
+        label: "Terms of Service",
+      },
+    ],
+  }
+];
