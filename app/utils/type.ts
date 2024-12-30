@@ -27,3 +27,9 @@ export interface InputProps {
   setPasswordVisibility?: (value: boolean) => void;
   disabled?: boolean;
 }
+
+export interface AuthProps {
+  email: string;
+  password: string;
+  fullname?: string;
+}

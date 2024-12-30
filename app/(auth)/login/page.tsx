@@ -1,10 +1,49 @@
+"use client"
+import React, { useState } from "react";
 import Button from "@/app/component/common/Button";
 import Input from "@/app/component/common/Input";
 import { ROUTES } from "@/app/utils/imports";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import { login } from "@/app/lib/auth";
 
 const LoginPage = () => {
+    const [loading, setLoading] = useState(false);
+  const [userInfo, setuserInfo] = useState({
+    email: "",
+    password: "",
+  });
+    const router = useRouter();
+
+      const handlesOnChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    e.preventDefault();
+    setuserInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handlesLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const res = await login({
+      email: userInfo.email,
+      password: userInfo.password,
+    });
+
+    if (res?.user) { // Redirect only if the login is successful
+      router.push(ROUTES.RESET);
+    } else {
+      console.error("Login failed");
+    }
+  } catch (error) {
+    console.error("Login failed:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
   return (
     <div className="mt-12">
       <h2 className="text-4xl sm:text-5xl font-bold">Welcome Back</h2>
@@ -20,18 +59,22 @@ const LoginPage = () => {
       
       </p>
 
-      <form action="" className="text-sm ">
+      <form onSubmit={handlesLogin} className="text-sm ">
         <Input
           label="Email"
           id="email"
           placeholder="Enter your email"
           type="email"
+           value={userInfo.email}
+            onchange={handlesOnChange}
         />
         <Input
           label="Password"
           id="password"
           placeholder="Enter your password"
           type="password"
+           value={userInfo.password}
+           onchange={handlesOnChange}
         />
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
