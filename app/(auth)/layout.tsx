@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { IMAGES, ROUTES } from "../utils/imports";
-import Link from "next/link";
+import { IMAGES } from "../utils/imports";
 
 const AuthLayout = ({
   children,

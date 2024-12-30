@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Host_Grotesk } from "next/font/google";
-import Header from "./component/layout/Header";
-import Footer from "./component/layout/Footer";
 
 const grotesk = Host_Grotesk({
   subsets: ["latin"],
