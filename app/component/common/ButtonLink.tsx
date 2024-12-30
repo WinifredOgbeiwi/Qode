@@ -13,13 +13,13 @@ const ButtonLink: React.FC<LinkProps> = ({ href, label, variant, width }) => {
       onMouseLeave={() => setHover(false)}
       className={`${width} ${
           hover ? "bg-[#F193DD] " : "bg-black"
-        } inline-block rounded-md text-center border-black border transition-all duration-300`} >
+        } inline-block rounded-md text-center border-black border-2 transition-all duration-300`} >
       <span
-        className={`rounded-md block -translate-x-[0.2rem] -translate-y-[0.2rem] border border-transparent transition-all duration-300 ${
-          hover ? "bg-[#FFC8E6] border-black" : ""
+        className={`rounded-md block -translate-x-[0.2rem] -translate-y-[0.2rem] border-2 border-black transition-all duration-300 ${
+          hover ? "bg-[#FFC8E6] " : ""
         }`} >
         <span
-          className={`${hover? "-translate-x-[0.2rem] -translate-y-[0.2rem]" :""} rounded-md block px-5 py-2 font-bold  border-2 border-black transition-all duration-300 ${
+          className={`${hover? "-translate-x-[0.2rem] -translate-y-[0.2rem]" :""} rounded-md block px-5 py-2 font-bold border-2 border-black transition-all duration-300 ${
             variant === "primary" ? "bg-pink-400 md:bg-[#4a7eef] text-white" : "bg-white"
           }`} >
           {label}
