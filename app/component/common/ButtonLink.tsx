@@ -15,7 +15,7 @@ const ButtonLink: React.FC<LinkProps> = ({ href, label, variant, width }) => {
           hover ? "bg-[#F193DD] " : "bg-black"
         } inline-block rounded-md text-center border-black border transition-all duration-300`} >
       <span
-        className={`rounded-md block -translate-x-[0.2rem] -translate-y-[0.2rem] border border-transparent transition-all duration-300 ${
+        className={`rounded-md block -translate-x-[0.2rem] -translate-y-[0.2rem] border border-black transition-all duration-300 ${
           hover ? "bg-[#FFC8E6] border-black" : ""
         }`} >
         <span

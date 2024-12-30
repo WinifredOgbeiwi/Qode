@@ -12,3 +12,18 @@ export interface LinkProps {
   width?: string;
   onclick?: () => void;
 }
+
+
+export interface InputProps {
+  label: string;
+  type: "text" | "password" | "email";
+  id: string;
+  placeholder: string;
+  onchange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
+  value?: string;
+  passwordVisibility?: boolean;
+  setPasswordVisibility?: (value: boolean) => void;
+  disabled?: boolean;
+}
