@@ -18,3 +18,10 @@ li{
   background-position: center;
   background-size: cover;
 }
+
+
+.auth-bg{
+  background-image: url('../public/images/bg-login.svg');
+  background-position: center;
+  background-size: cover;
+}

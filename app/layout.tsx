@@ -22,10 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${grotesk.className} flex flex-col min-h-screen`}>
-        <Header />
-        <main className="flex-1 h-full bg-[#f8f5ff]">{children}</main>
-        <Footer />
+     <body
+    className={`${grotesk.className} max-w-screen-2xl h-screen mx-auto bg-[#f8f5ff] `}>
+        <main>{children}</main>
       </body>
     </html>
   );

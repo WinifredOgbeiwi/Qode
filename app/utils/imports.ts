@@ -1,10 +1,15 @@
 import Logo from "../../public/logo.png";
 import Logo_white from "../../public/logo-white.png";
 import ImageHolder from "../../public/images/image-holder.png";
+import Auth_BG from "../../public/images/bg-login.svg";
+import Auth_Placeholder from "../../public/images/auth-placeholder.png";
+
 export const IMAGES = {
   Logo,
   Logo_white,
-  ImageHolder
+  ImageHolder,
+Auth_BG,
+Auth_Placeholder
 };
 
 export const ROUTES = {
