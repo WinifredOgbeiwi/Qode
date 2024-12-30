@@ -3,6 +3,7 @@ export interface ButtonProps {
   onclick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   variant: "primary" | "secondary";
   width?: string;
+  loading?: boolean;
 }
 
 export interface LinkProps {

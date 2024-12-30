@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Button from "@/app/component/common/Button";
 import Input from "@/app/component/common/Input";
@@ -6,16 +6,17 @@ import { ROUTES } from "@/app/utils/imports";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { login } from "@/app/lib/auth";
+import Loader from "@/app/component/common/Loader";
 
 const LoginPage = () => {
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [userInfo, setuserInfo] = useState({
     email: "",
     password: "",
   });
-    const router = useRouter();
+  const router = useRouter();
 
-      const handlesOnChange = (
+  const handlesOnChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     e.preventDefault();
@@ -23,69 +24,61 @@ const LoginPage = () => {
   };
 
   const handlesLogin = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setLoading(true);
+    e.preventDefault();
+    setLoading(true);
 
-  try {
-    const res = await login({
-      email: userInfo.email,
-      password: userInfo.password,
-    });
+    try {
+      const res = await login({
+        email: userInfo.email,
+        password: userInfo.password,
+      });
 
-    if (res?.user) { // Redirect only if the login is successful
-      router.push(ROUTES.RESET);
-    } else {
-      console.error("Login failed");
+      if (res?.user) {
+        router.push(ROUTES.RESET);
+      } else {
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    console.error("Login failed:", error);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
+    
     <div className="mt-12">
       <h2 className="text-4xl sm:text-5xl font-bold">Welcome Back</h2>
       <p className="text-sm">
         Login to access your account
-        {/* <span className="font-bold">
-          <Image
-            src={IMAGES.Logo}
-            alt="qode-logo"
-            className="inline-block w-16"
-          />
-        </span> */}
-      
-      </p>
-
+      </p> 
       <form onSubmit={handlesLogin} className="text-sm ">
         <Input
           label="Email"
           id="email"
           placeholder="Enter your email"
           type="email"
-           value={userInfo.email}
-            onchange={handlesOnChange}
+          value={userInfo.email}
+          onchange={handlesOnChange}
         />
         <Input
           label="Password"
           id="password"
           placeholder="Enter your password"
           type="password"
-           value={userInfo.password}
-           onchange={handlesOnChange}
+          value={userInfo.password}
+          onchange={handlesOnChange}
         />
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                id="rememberMe"
-                name="rememberMe"
-                className="w-4 h-4 bg-transparent  outline-none "/>
+            <input
+              type="checkbox"
+              id="rememberMe"
+              name="rememberMe"
+              className="w-4 h-4 bg-transparent  outline-none "
+            />
             <label htmlFor="rememberMe">Remember me</label>
           </div>
-
           <Link
             href={ROUTES.FORGOT_PASSWORD}
             className="mt-3 mb-5 inline-block hover:text-[#924dfa]"
@@ -93,14 +86,16 @@ const LoginPage = () => {
             Forgot Password?
           </Link>
         </div>
-        <Button label="Login" variant="primary" width="w-full" />
+      
+        <Button label="Login" variant="primary" width="w-full" loading={loading ? true : false}/>
       </form>
-          <p className="text-sm mt-2">
+      <p className="text-sm mt-2">
         Don&#39;t have an account?
         <Link href={ROUTES.REGISTER} className="text-[#924dfa]">
           Register
         </Link>
       </p>
+    
     </div>
   );
 };

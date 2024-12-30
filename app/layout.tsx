@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
      <body
-    className={`${grotesk.className} max-w-screen-2xl h-screen mx-auto bg-[#f8f5ff] `}>
+    className={`${grotesk.className} overflow-x-hidden  bg-[#f8f5ff]`}>
         <main>{children}</main>
       </body>
     </html>

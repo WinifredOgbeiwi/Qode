@@ -3,13 +3,15 @@ import Logo_white from "../../public/logo-white.png";
 import ImageHolder from "../../public/images/image-holder.png";
 import Auth_BG from "../../public/images/bg-login.svg";
 import Auth_Placeholder from "../../public/images/auth-placeholder.png";
+import Loader from "../../public/loader.gif";
 
 export const IMAGES = {
   Logo,
   Logo_white,
   ImageHolder,
 Auth_BG,
-Auth_Placeholder
+Auth_Placeholder,
+Loader
 };
 
 export const ROUTES = {
