@@ -1,7 +1,6 @@
 import Button from "@/app/component/common/Button";
 import Input from "@/app/component/common/Input";
-import { IMAGES, ROUTES } from "@/app/utils/imports";
-import Image from "next/image";
+import { ROUTES } from "@/app/utils/imports";
 import Link from "next/link";
 import React from "react";
 
