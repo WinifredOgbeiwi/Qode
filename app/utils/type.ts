@@ -4,6 +4,8 @@ export interface ButtonProps {
   variant: "primary" | "secondary";
   width?: string;
   loading?: boolean;
+    color?:string;
+
 }
 
 export interface LinkProps {
@@ -13,7 +15,6 @@ export interface LinkProps {
   width?: string;
   onclick?: () => void;
 }
-
 
 export interface InputProps {
   label: string;
@@ -35,8 +36,6 @@ export interface AuthProps {
   fullname?: string;
 }
 
-
-
 export interface AuthDBProps {
   email: string;
   password: string;
@@ -45,4 +44,10 @@ export interface AuthDBProps {
   experience: string;
   uid: string;
   username: string;
+}
+
+export interface AuthState {
+  user: any | null;
+  setUser: (user: any) => void;
+  logout: () => void;
 }

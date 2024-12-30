@@ -3,7 +3,7 @@ import { ButtonProps } from "@/app/utils/type";
 import { useState } from "react";
 import Loader from "./Loader";
 
-const Button: React.FC<ButtonProps> = ({ label, width, onclick,loading }) => {
+const Button: React.FC<ButtonProps> = ({ label, width, onclick,loading,color }) => {
   const [hover, setHover] = useState(false);
   return (
     <button
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({ label, width, onclick,loading }) => {
         <span
           className={`${
             hover ? "-translate-x-[0.2rem] -translate-y-[0.2rem]" : ""
-          }  block px-5 py-3  border-2 border-black transition-all duration-300 bg-[#a26bf5]`}
+          }  block px-5 py-3  border-2 border-black transition-all duration-300 bg-[#a26bf5] ${color}`}
         >
           {loading ? <Loader/> : label}
         </span>
