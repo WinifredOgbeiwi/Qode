@@ -2,7 +2,7 @@
 import { ButtonProps } from "@/app/utils/type";
 import { useState } from "react";
 
-const Button: React.FC<ButtonProps> = ({ label, variant, width,onclick }) => {
+const Button: React.FC<ButtonProps> = ({ label, width,onclick }) => {
 
       const [hover, setHover] = useState(false);
 
