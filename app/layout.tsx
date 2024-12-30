@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Host_Grotesk } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 
 const grotesk = Host_Grotesk({
   subsets: ["latin"],
@@ -23,6 +25,17 @@ export default function RootLayout({
      <body
     className={`${grotesk.className} overflow-x-hidden  bg-[#f8f5ff]`}>
         <main>{children}</main>
+             <ToastContainer 
+        position="top-right" 
+        autoClose={3000} 
+        hideProgressBar={false} 
+        closeOnClick 
+        rtl={false} 
+        pauseOnFocusLoss 
+        draggable 
+        pauseOnHover 
+        theme="light"
+      />
       </body>
     </html>
   );

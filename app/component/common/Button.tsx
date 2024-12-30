@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({ label, width, onclick,loading }) => {
         <span
           className={`${
             hover ? "-translate-x-[0.2rem] -translate-y-[0.2rem]" : ""
-          } rounded-sm block px-5 py-3  border-2 border-black transition-all duration-300 bg-pink-400`}
+          }  block px-5 py-3  border-2 border-black transition-all duration-300 bg-[#a26bf5]`}
         >
           {loading ? <Loader/> : label}
         </span>

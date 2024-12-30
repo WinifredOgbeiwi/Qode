@@ -6,7 +6,7 @@ import { ROUTES } from "@/app/utils/imports";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { login } from "@/app/lib/auth";
-import Loader from "@/app/component/common/Loader";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
@@ -37,8 +37,16 @@ const LoginPage = () => {
         router.push(ROUTES.RESET);
       } else {
         console.error("Login failed");
+        toast.error("Login failed. Please try again.", {
+          position: "top-right",
+          style: {
+            backgroundColor: "#f44336",
+            color: "#fff",
+            border: "2px solid black",
+          },
+        });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Login failed:", error);
     } finally {
       setLoading(false);
@@ -46,12 +54,9 @@ const LoginPage = () => {
   };
 
   return (
-    
     <div className="mt-12">
       <h2 className="text-4xl sm:text-5xl font-bold">Welcome Back</h2>
-      <p className="text-sm">
-        Login to access your account
-      </p> 
+      <p className="text-sm">Login to access your account</p>
       <form onSubmit={handlesLogin} className="text-sm ">
         <Input
           label="Email"
@@ -86,16 +91,19 @@ const LoginPage = () => {
             Forgot Password?
           </Link>
         </div>
-      
-        <Button label="Login" variant="primary" width="w-full" loading={loading ? true : false}/>
+
+        <Button
+          label="Login"
+          variant="primary"
+          width="w-full"
+          loading={loading ? true : false}
+        />
       </form>
       <p className="text-sm mt-2">
         Don&#39;t have an account?
-        <Link href={ROUTES.REGISTER} className="text-[#924dfa]">
-          Register
+        <Link href={ROUTES.REGISTER} className="text-[#924dfa]"> Register
         </Link>
       </p>
-    
     </div>
   );
 };
