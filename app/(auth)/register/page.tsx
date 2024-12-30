@@ -14,7 +14,7 @@ const RegisterPage = () => {
   const [userInfo, setuserInfo] = useState({
     firstname: "",
     lastname: "",
-    username:"",
+    username: "",
     email: "",
     experience: "",
     password: "",
@@ -32,9 +32,10 @@ const RegisterPage = () => {
     setuserInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-const fullname = userInfo.firstname + " " + userInfo.lastname;
+  const fullname = userInfo.firstname + " " + userInfo.lastname;
   const handlesRegister = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const uid = await register({
         email: userInfo.email,
@@ -48,7 +49,7 @@ const fullname = userInfo.firstname + " " + userInfo.lastname;
         firstname: userInfo.firstname,
         lastname: userInfo.lastname,
         experience: userInfo.experience,
-         username:userInfo.username,
+        username: userInfo.username,
       });
       router.push(ROUTES.VERIFY_EMAIL);
     } catch (error) {
@@ -61,7 +62,6 @@ const fullname = userInfo.firstname + " " + userInfo.lastname;
       setLoading(false);
     }
   };
-
 
   return (
     <div className="mt-12">
@@ -130,7 +130,6 @@ const fullname = userInfo.firstname + " " + userInfo.lastname;
           onchange={handlesOnChange}
         />
 
-
         <Button
           label="Register"
           variant="primary"
@@ -140,7 +139,9 @@ const fullname = userInfo.firstname + " " + userInfo.lastname;
       </form>
       <p className="text-sm mt-2">
         Already have an account?
-        <Link href={ROUTES.LOGIN} className="text-[#924dfa]"> Login
+        <Link href={ROUTES.LOGIN} className="text-[#924dfa]">
+          {" "}
+          Login
         </Link>
       </p>
     </div>
