@@ -7,7 +7,7 @@ import React from "react";
 const LoginPage = () => {
   return (
     <div className="mt-12">
-      <h2 className="text-5xl font-bold">Welcome Back</h2>
+      <h2 className="text-4xl sm:text-5xl font-bold">Welcome Back</h2>
       <p className="text-sm">
         Login to access your account
         {/* <span className="font-bold">

@@ -8,18 +8,24 @@ const AuthLayout = ({
 }>) => {
   return (
     <section className="h-screen overflow-x-hidden bg-[#f8f5ff]">
-      <div className="flex gap-20 h-full w-full overflow-x-hidden relative">
-        <div className="pt-10 px-20 z-50 w-full">
+      <div className="md:flex gap-20 h-full w-full overflow-x-hidden relative">
+        <div className="pt-10 px-10 md:px-20 w-full z-50 relative">
           <Image src={IMAGES.Logo} alt="Qode Logo" className="w-36 " />
-          <main className="max-w-md mt-5">{children}</main>
+          <main className=" w-full md:max-w-md mt-5 z-50">{children}</main>
         </div>
-        <div className="auth-bg h-fit -right-[45rem] absolute w-[100%] overflow-hidden">
-          <div className="h-full w-2/3 ">
+         <Image
+              src={IMAGES.Auth_BG}
+              alt="auth-holder"
+              className="object-cover block md:hidden  -top-[20rem] absolute "
+            />
+        <div className="auth-bg h-fit md:-right-[45rem] md:absolute w-[100%] hidden md:block overflow-hidden">
+          <div className="h-full w-2/3 hidden md:block">
             <Image
               src={IMAGES.Auth_Placeholder}
               alt="auth-holder"
               className="object-cover w-full"
             />
+            
           </div>
         </div>
       </div>
