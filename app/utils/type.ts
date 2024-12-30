@@ -34,3 +34,15 @@ export interface AuthProps {
   password: string;
   fullname?: string;
 }
+
+
+
+export interface AuthDBProps {
+  email: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  experience: string;
+  uid: string;
+  username: string;
+}

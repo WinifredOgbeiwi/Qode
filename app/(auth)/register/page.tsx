@@ -5,8 +5,8 @@ import Input from "@/app/component/common/Input";
 import { ROUTES } from "@/app/utils/imports";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { login } from "@/app/lib/auth";
-import { toast } from "react-toastify";
+import { register } from "@/app/lib/auth";
+import axios from "axios";
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
@@ -14,6 +14,7 @@ const RegisterPage = () => {
   const [userInfo, setuserInfo] = useState({
     firstname: "",
     lastname: "",
+    username:"",
     email: "",
     experience: "",
     password: "",
@@ -81,6 +82,14 @@ const fullname = userInfo.firstname + " " + userInfo.lastname;
           placeholder="Enter your Last Name"
           type="text"
           value={userInfo.lastname}
+          onchange={handlesOnChange}
+        />
+        <Input
+          label="UserName"
+          id="username"
+          placeholder="Enter your UserName"
+          type="text"
+          value={userInfo.username}
           onchange={handlesOnChange}
         />
         <label htmlFor="experience" className="text-sm block mt-5">
