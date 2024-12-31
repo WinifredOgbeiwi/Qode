@@ -3,6 +3,7 @@ import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { Host_Grotesk } from "next/font/google";
 import { ToastContainer } from "react-toastify";
+import Main from "./component/layout/Main";
 
 const grotesk = Host_Grotesk({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
      <body
     className={`${grotesk.className} overflow-x-hidden  bg-[#f8f5ff]`}>
-        <main>{children}</main>
+         <Main>{children}</Main>
              <ToastContainer 
         position="top-right" 
         autoClose={3000} 
