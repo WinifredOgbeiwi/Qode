@@ -34,7 +34,7 @@ const LoginPage = () => {
       });
 
       if (res?.user) {
-        router.push(ROUTES.RESET_PASSWORD);
+        router.push(ROUTES.DASHBOARD);
       } else {
         console.error("Login failed");
         toast.error("Login failed. Please try again.", {

@@ -28,6 +28,11 @@ export const ROUTES = {
   RESET_PASSWORD: "/reset-password",
 
   // Protected routes
+  DASHBOARD: "/dashboard",
+  PROFILE: "/profile",
+  HISTORY: "/history",
+  LEADERBOARD:'/leaderboard',
+  
 };
 
 export const NavUrl = [
