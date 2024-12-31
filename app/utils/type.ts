@@ -47,14 +47,8 @@ export interface AuthDBProps {
 }
 
 
-export interface User {
-  id: string; 
-  email: string;
-  name?: string;
- 
-}
 export interface AuthState {
-  user: User | null;
-  setUser: (user: User) => void;
+  user: any | null;
+  setUser: (user: any) => void;
   logout: () => void;
 }

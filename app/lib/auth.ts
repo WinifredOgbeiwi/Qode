@@ -1,26 +1,12 @@
+// lib/auth.ts
 "use client"
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { AuthProps } from "../utils/type";
-import { auth } from "@/firebase";
-import { useEffect, useState } from "react";
-import { useAuthStore } from "@/store/useAuthStore";
+import { auth } from '@/firebase';
+import { useAuthStore } from '@/store/useAuthStore';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail, sendEmailVerification } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { AuthProps } from '../utils/type';
 
-export const login = async ({ email, password }: AuthProps) => {
-  try {
-    const res = await signInWithEmailAndPassword(auth, email, password);
-    const accessToken = await res.user.getIdToken();
-    localStorage.setItem("accessToken", accessToken);
-    return res; // Return the response
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    } else {
-      console.error("An unknown error occurred during login.");
-    }
-    return null; 
-  }
-};
-
+// register function
 export const register = async ({email, password, fullname}:AuthProps) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password); 
@@ -35,6 +21,23 @@ export const register = async ({email, password, fullname}:AuthProps) => {
     } else {
       console.error("An unknown error occurred during registration.");
     }
+  }
+};
+
+// Login function
+export const login = async ({ email, password }: AuthProps) => {
+  try {
+    const res = await signInWithEmailAndPassword(auth, email, password);
+    const accessToken = await res.user.getIdToken();
+    localStorage.setItem("accessToken", accessToken);
+    return res; // Return the response
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    } else {
+      console.error("An unknown error occurred during login.");
+    }
+    return null; 
   }
 };
 
@@ -54,7 +57,7 @@ export const useAuthListener = () => {
         setUser(null);
         localStorage.removeItem("accessToken");
       }
-      setAuthLoading(false); 
+      setAuthLoading(false);
     });
 
     return () => unsubscribe();
@@ -64,6 +67,9 @@ export const useAuthListener = () => {
 };
 
 
+
+
+//forgot password
 export const forgotpassword = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -72,7 +78,7 @@ export const forgotpassword = async (email: string) => {
     if (error instanceof Error) {
       console.error(error.message);
     } else {
-      console.error("An unknown error occurred during reset password.");
+      console.error("An unknown error occurred during forgot-password.");
     }
   }
 };
