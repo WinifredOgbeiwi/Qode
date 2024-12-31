@@ -46,8 +46,15 @@ export interface AuthDBProps {
   username: string;
 }
 
-export interface AuthState<T = unknown> {
-  user: T | null;
-  setUser: (user: T | null) => void;
+
+export interface User {
+  id: string; 
+  email: string;
+  name?: string;
+ 
+}
+export interface AuthState {
+  user: User | null;
+  setUser: (user: User) => void;
   logout: () => void;
 }
