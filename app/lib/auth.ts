@@ -2,7 +2,7 @@
 "use client"
 import { auth } from '@/firebase';
 import { useAuthStore } from '@/store/useAuthStore';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail, sendEmailVerification } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, sendPasswordResetEmail, sendEmailVerification } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import { AuthProps } from '../utils/type';
 
