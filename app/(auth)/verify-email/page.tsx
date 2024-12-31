@@ -5,12 +5,15 @@ import { IMAGES, ROUTES } from "@/app/utils/imports";
 import { useAuthStore } from "@/store/useAuthStore";
 import { sendEmailVerification } from "firebase/auth";
 import Image from "next/image";
-import React from "react";
 
 const VerifyEmailPage = () => {
   const user = useAuthStore((state) => state.user);
   const resendEmail = () => {
+    if (user) {
     sendEmailVerification(user);
+  } else {
+    console.error("No user is logged in");
+  }
   };
 
   return (

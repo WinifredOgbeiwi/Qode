@@ -1,3 +1,4 @@
+import { User as FirebaseUser } from 'firebase/auth';
 export interface ButtonProps {
   label: string;
   onclick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -48,7 +49,7 @@ export interface AuthDBProps {
 
 
 export interface AuthState {
-  user: unknown | null;
-  setUser: (user: unknown) => void;
+  user: FirebaseUser | null;
+  setUser: (user: FirebaseUser | null) => void;
   logout: () => void;
 }
