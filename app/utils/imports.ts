@@ -25,8 +25,7 @@ export const ROUTES = {
   REGISTER: "/register",
   LOGIN: "/login",
   VERIFY_EMAIL: "/verify-email",
-  FORGOT_PASSWORD: "/forgot-password",
-  RESET: "/reset-password",
+  RESET_PASSWORD: "/reset-password",
 
   // Protected routes
 };

@@ -15,7 +15,7 @@ const ResetPasswordPage = () => {
 
   const router = useRouter();
 
-  const handlesForgotPassword = async (e: React.FormEvent) => {
+  const handlesResetPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -32,8 +32,8 @@ const ResetPasswordPage = () => {
     <div className={`mt-12 ${resetEmailSent && "border-2 border-black"}`}>
       <h2
         className={`text-4xl ${
-          resetEmailSent && "bg-[#B8FF9F] border-b-2 py-2 border-black"
-        } font-bold text-center mb-5 `}
+          resetEmailSent && "bg-[#B8FF9F] text-center border-b-2 py-2 border-black"
+        } font-bold `}
       >
         {resetEmailSent ? "Reset Password" : "Forgot your password?"}
       </h2>
@@ -58,7 +58,7 @@ const ResetPasswordPage = () => {
           <div className="flex my-4 justify-center">
             <div
               className=" cursor-pointer w-fit px-3 bg-[#FF9EFF] py-2  border-2 border-black "
-              onClick={handlesForgotPassword}
+              onClick={handlesResetPassword}
             >
               Resend email
             </div>
@@ -73,7 +73,7 @@ const ResetPasswordPage = () => {
         </div>
       ) : (
         <>
-          <form onSubmit={handlesForgotPassword} className="text-sm ">
+          <form onSubmit={handlesResetPassword} className="text-sm ">
             <Input
               label="Email"
               id="email"
@@ -86,7 +86,7 @@ const ResetPasswordPage = () => {
             <Button
               label="Send"
               variant="primary"
-              width="w-full"
+              width="w-full mt-8"
               loading={loading ? true : false}
             />
           </form>

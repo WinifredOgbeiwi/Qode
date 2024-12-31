@@ -21,7 +21,7 @@ const Main = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       pathname !== ROUTES.HOME &&
       pathname !== ROUTES.LOGIN &&
       pathname !== ROUTES.REGISTER &&
-      pathname !== ROUTES.FORGOT_PASSWORD &&
+      pathname !== ROUTES.RESET_PASSWORD &&
       pathname !== ROUTES.VERIFY_EMAIL
     ) {
       router.push(ROUTES.LOGIN);

@@ -72,7 +72,7 @@ export const forgotpassword = async (email: string) => {
     if (error instanceof Error) {
       console.error(error.message);
     } else {
-      console.error("An unknown error occurred during forgot-password.");
+      console.error("An unknown error occurred during reset password.");
     }
   }
 };

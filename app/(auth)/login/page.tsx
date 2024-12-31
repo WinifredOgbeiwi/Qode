@@ -34,7 +34,7 @@ const LoginPage = () => {
       });
 
       if (res?.user) {
-        router.push(ROUTES.RESET);
+        router.push(ROUTES.RESET_PASSWORD);
       } else {
         console.error("Login failed");
         toast.error("Login failed. Please try again.", {
@@ -85,7 +85,7 @@ const LoginPage = () => {
             <label htmlFor="rememberMe">Remember me</label>
           </div>
           <Link
-            href={ROUTES.FORGOT_PASSWORD}
+            href={ROUTES.RESET_PASSWORD}
             className="mt-3 mb-5 inline-block hover:text-[#924dfa]"
           >
             Forgot Password?
