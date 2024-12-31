@@ -46,7 +46,7 @@ const LoginPage = () => {
           },
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Login failed:", error);
     } finally {
       setLoading(false);
