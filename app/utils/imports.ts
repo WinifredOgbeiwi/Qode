@@ -9,9 +9,9 @@ export const IMAGES = {
   Logo,
   Logo_white,
   ImageHolder,
-Auth_BG,
-Auth_Placeholder,
-Loader
+  Auth_BG,
+  Auth_Placeholder,
+  Loader,
 };
 
 export const ROUTES = {
@@ -31,8 +31,7 @@ export const ROUTES = {
   DASHBOARD: "/dashboard",
   PROFILE: "/profile",
   HISTORY: "/history",
-  LEADERBOARD:'/leaderboard',
-  
+  LEADERBOARD: "/leaderboard",
 };
 
 export const NavUrl = [
@@ -88,5 +87,6 @@ export const FooterUrl = [
         label: "Terms of Service",
       },
     ],
-  }
+  },
 ];
+
