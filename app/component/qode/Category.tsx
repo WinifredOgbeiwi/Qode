@@ -13,7 +13,9 @@ const Category: React.FC<CategoryProps> = ({
   const [hover, setHover] = useState(null);
   return (
     <div>
-
+<h2 className="text-4xl bg-[#B8FF9F] text-center border-b-2 py-4 border-black font-bold ">
+        Select Your Battlefield!
+      </h2>
       {!selectedCategory && !isQuizCompleted && (
         <ul className="flex justify-center  mt-16 items-center flex-wrap gap-10">
           {categories.map((category) => (
