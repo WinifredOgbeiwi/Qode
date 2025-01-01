@@ -93,3 +93,18 @@ export type QuestionsProps = {
   timeRemaining:number;
   handleOptionClick:(opt:string)=> void;
 }
+export type QodeTypeProps = {
+  selectedCategory:string | null;
+  selectedQuiz: string | null;
+  isQuizCompleted: boolean;
+  categoryName:string | null;
+  quizzes:any[];
+   setQuestions: (categoryId: string, quizId: string) => void;
+  setQuizId:(quiz: number) => void;
+}
+
+
+// export type QodeButtonProps = {
+// section:any[];
+// onclick: () => void;
+// }
