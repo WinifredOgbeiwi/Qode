@@ -32,6 +32,7 @@ export const ROUTES = {
   PROFILE: "/profile",
   HISTORY: "/history",
   LEADERBOARD:'/leaderboard',
+  Qode:"/qode"
   
 };
 

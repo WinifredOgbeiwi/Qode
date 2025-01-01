@@ -19,9 +19,19 @@ li{
   background-size: cover;
 }
 
+.qode {
+  background-image: url('../public/images/qode-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .auth-bg{
   background-image: url('../public/images/bg-login.svg');
   background-position: center;
   background-size: cover;
+}
+
+.shadow{
+    box-shadow: 5px 5px #000;
 }
