@@ -1,7 +1,7 @@
-import { QodeQuizProps } from "@/app/utils/type";
+import { QuestionsProps } from "@/app/utils/type";
 import React from "react";
 
-const QodeQuiz:React.FC<QodeQuizProps> = ({selectedQuiz,shuffledQuestions,isQuizCompleted,currentQuestionIndex,timeRemaining,handleOptionClick}) => {
+const Questions:React.FC<QuestionsProps> = ({selectedQuiz,shuffledQuestions,isQuizCompleted,currentQuestionIndex,timeRemaining,handleOptionClick}) => {
   return (
     <div>
       {selectedQuiz && shuffledQuestions.length > 0 && !isQuizCompleted && (
@@ -34,4 +34,4 @@ const QodeQuiz:React.FC<QodeQuizProps> = ({selectedQuiz,shuffledQuestions,isQuiz
   );
 }
 
-export default QodeQuiz
+export default Questions

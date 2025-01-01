@@ -72,16 +72,22 @@ export type CategoryProps = {
  setCategoryName: (categoryName: string) => void;
 }
 
-export interface Questions {
+export interface QuestionsType {
   questionText: string;
   option: string[];
   answer: string;
   explanation: string;
 }
 
-export type QodeQuizProps = {
+export interface UserAnswer {
+  question: string;
+  selectedOption: string;
+  answer: string;
+  explanation: string;
+}
+export type QuestionsProps = {
  selectedQuiz: string | null;
-  shuffledQuestions:Questions[];
+  shuffledQuestions:QuestionsType[];
   isQuizCompleted:boolean;
   currentQuestionIndex:number;
   timeRemaining:number;
