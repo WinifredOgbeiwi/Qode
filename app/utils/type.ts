@@ -47,9 +47,27 @@ export interface AuthDBProps {
   username: string;
 }
 
-
 export interface AuthState {
   user: FirebaseUser | null;
   setUser: (user: FirebaseUser | null) => void;
   logout: () => void;
+}
+
+export type QodeState = {
+  categories: any[];
+  quizzes: any[];
+  questions: any[];
+  selectedCategory: string | null;
+  selectedQuiz: string | null;
+  setCategories: () => void;
+  setQuizzes: (categoryId: string) => void;
+  setQuestions: (categoryId: string, quizId: string) => void;
+};
+
+export type CategoryProps = {
+  selectedCategory: string | null;
+  isQuizCompleted: boolean;
+  categories:any[];
+  setQuizzes:(categoryId: string) => void;
+ setCategoryName: (categoryName: string) => void;
 }

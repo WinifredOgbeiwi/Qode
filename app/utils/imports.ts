@@ -4,6 +4,7 @@ import ImageHolder from "../../public/images/image-holder.png";
 import Auth_BG from "../../public/images/bg-login.svg";
 import Auth_Placeholder from "../../public/images/auth-placeholder.png";
 import Loader from "../../public/loader.gif";
+import DB from "../../public/images/relational.png"
 
 export const IMAGES = {
   Logo,
@@ -11,7 +12,8 @@ export const IMAGES = {
   ImageHolder,
 Auth_BG,
 Auth_Placeholder,
-Loader
+Loader,
+DB
 };
 
 export const ROUTES = {
