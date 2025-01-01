@@ -1,10 +1,17 @@
 import Logo from "../../public/logo.png";
 import Logo_white from "../../public/logo-white.png";
 import ImageHolder from "../../public/images/image-holder.png";
+import Auth_BG from "../../public/images/bg-login.svg";
+import Auth_Placeholder from "../../public/images/auth-placeholder.png";
+import Loader from "../../public/loader.gif";
+
 export const IMAGES = {
   Logo,
   Logo_white,
-  ImageHolder
+  ImageHolder,
+Auth_BG,
+Auth_Placeholder,
+Loader
 };
 
 export const ROUTES = {
@@ -18,10 +25,14 @@ export const ROUTES = {
   REGISTER: "/register",
   LOGIN: "/login",
   VERIFY_EMAIL: "/verify-email",
-  FORGOT_PASSWORD: "/forgot-password",
-  RESET: "/reset-password",
+  RESET_PASSWORD: "/reset-password",
 
   // Protected routes
+  DASHBOARD: "/dashboard",
+  PROFILE: "/profile",
+  HISTORY: "/history",
+  LEADERBOARD:'/leaderboard',
+  
 };
 
 export const NavUrl = [
