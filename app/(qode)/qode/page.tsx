@@ -33,6 +33,7 @@ const Qodepage = () => {
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [quizId, setQuizId] = useState<number | null>(null);
+  
   useEffect(() => {
     if (user) setCategories();
   }, [setCategories, user]);
@@ -71,6 +72,21 @@ const Qodepage = () => {
       setIsQuizCompleted(true);
     }
   };
+  
+  //   useEffect(() => {
+  //   if (!isQuizStarted || isQuizCompleted) return; 
+  //   if (timeRemaining <= 0) {
+  //     setIsQuizCompleted(true);
+  //     return;
+  //   }
+
+  //   const timerId = setInterval(() => {
+  //     setTimeRemaining((prevTime) => prevTime - 1);
+  //   }, 1000);
+
+  //   return () => clearInterval(timerId);
+  // }, [isQuizStarted, isQuizCompleted, timeRemaining]);
+
   return (
     <div>
       <Category

@@ -15,13 +15,15 @@ const Type: React.FC<QodeTypeProps> = ({
 }) => {
       const [hover, setHover] = useState(null);
   return (
-    <div>
+    <>
       {selectedCategory && !selectedQuiz && !isQuizCompleted && (
-        <>
+        <div >
           <h2 className="text-4xl bg-[#B8FF9F] text-center border-b-2 py-4 border-black font-bold ">
             Learning or Racing? <br/> Choose Your Mode!
           </h2>
-          <h4 className="text-center capitalize">{categoryName} Quizzes</h4>
+           <h4 className="text-center capitalize font-bold text-xl my-8">{categoryName} Quizzes</h4>
+          <div className="mb-16">
+         
           <ul className="flex justify-center items-center flex-wrap gap-6">
             {quizzes.map((quiz) => (
 
@@ -54,9 +56,10 @@ const Type: React.FC<QodeTypeProps> = ({
           </button>
             ))}
           </ul>
-        </>
+          </div>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
