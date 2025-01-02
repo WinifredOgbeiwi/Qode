@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { doc, setDoc } from "firebase/firestore";
 import { AuthDBProps } from "@/app/utils/type";
 
+// saving users to db
 export const  POST = async(req: NextRequest) =>{
     const { uid, email, firstname,lastname,experience,username }: AuthDBProps = await req.json();
     try {
