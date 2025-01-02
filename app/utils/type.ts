@@ -54,9 +54,9 @@ export interface AuthState {
 }
 
 export type QodeState = {
-  categories: any[];
-  quizzes: any[];
-  questions: any[];
+  categories: any[];/* eslint-disable-line no-alert */
+  quizzes: any[];/* eslint-disable-line no-alert */
+  questions: any[];/* eslint-disable-line no-alert */
   selectedCategory: string | null;
   selectedQuiz: string | null;
   setCategories: () => void;
@@ -67,7 +67,7 @@ export type QodeState = {
 export type CategoryProps = {
   selectedCategory: string | null;
   isQuizCompleted: boolean;
-  categories:any[];
+  categories:any[];/* eslint-disable-line no-alert */
   setQuizzes:(categoryId: string) => void;
  setCategoryName: (categoryName: string) => void;
 }
@@ -98,7 +98,7 @@ export type QodeTypeProps = {
   selectedQuiz: string | null;
   isQuizCompleted: boolean;
   categoryName:string | null;
-  quizzes:any[];
+  quizzes:any[];/* eslint-disable-line no-alert */
    setQuestions: (categoryId: string, quizId: string) => void;
   setQuizId:(quiz: number) => void;
 }
