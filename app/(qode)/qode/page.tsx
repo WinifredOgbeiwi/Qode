@@ -35,15 +35,14 @@ const Qodepage = () => {
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [quizId, setQuizId] = useState<number | null>(null);
-  
-     const totalScore = Math.round((score / shuffledQuestions.length) * 100);
 
-      const confettiSettings = {
-  particleCount: 2000,
-  spread: 550,
-   angle:100,
+  const totalScore = Math.round((score / shuffledQuestions.length) * 100);
 
-};
+  const confettiSettings = {
+    particleCount: 2000,
+    spread: 550,
+    angle: 100,
+  };
   useEffect(() => {
     if (user) setCategories();
   }, [setCategories, user]);
@@ -82,9 +81,9 @@ const Qodepage = () => {
       setIsQuizCompleted(true);
     }
   };
-  
-    useEffect(() => {
-    if (!isQuizStarted || isQuizCompleted) return; 
+
+  useEffect(() => {
+    if (!isQuizStarted || isQuizCompleted) return;
     if (timeRemaining <= 0) {
       setIsQuizCompleted(true);
       return;
@@ -97,7 +96,7 @@ const Qodepage = () => {
     return () => clearInterval(timerId);
   }, [isQuizStarted, isQuizCompleted, timeRemaining]);
 
-    useEffect(() => {
+  useEffect(() => {
     const storeQuizData = async () => {
       if (isQuizCompleted && quizId !== null && user) {
         if (totalScore > 50) confetti(confettiSettings);
@@ -116,13 +115,13 @@ const Qodepage = () => {
     storeQuizData();
   }, [isQuizCompleted, quizId, score, user, totalScore]);
 
-    const replayQuiz = () => {
+  const replayQuiz = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
     setUserAnswers([]);
     setIsQuizCompleted(false);
     setTimeRemaining(20);
-    setIsQuizStarted(false); 
+    setIsQuizStarted(false);
   };
 
   const reloadPage = () => {
@@ -154,13 +153,14 @@ const Qodepage = () => {
         timeRemaining={timeRemaining}
         handleOptionClick={handleOptionClick}
       />
-      <QuestCompletion isQuizCompleted={isQuizCompleted}
-      score={score}
-      shuffledQuestions={shuffledQuestions}
-      userAnswers={userAnswers}
-      totalScore = {totalScore}
-      replayQuiz={replayQuiz}
-      reloadPage={reloadPage}
+      <QuestCompletion
+        isQuizCompleted={isQuizCompleted}
+        score={score}
+        shuffledQuestions={shuffledQuestions}
+        userAnswers={userAnswers}
+        totalScore={totalScore}
+        replayQuiz={replayQuiz}
+        reloadPage={reloadPage}
       />
     </div>
   );
