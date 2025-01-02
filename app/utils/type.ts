@@ -47,9 +47,76 @@ export interface AuthDBProps {
   username: string;
 }
 
-
 export interface AuthState {
   user: FirebaseUser | null;
   setUser: (user: FirebaseUser | null) => void;
   logout: () => void;
+}
+
+export type QodeState = {
+  categories: any[];
+  quizzes: any[];
+  questions: any[];
+  selectedCategory: string | null;
+  selectedQuiz: string | null;
+  setCategories: () => void;
+  setQuizzes: (categoryId: string) => void;
+  setQuestions: (categoryId: string, quizId: string) => void;
+};
+
+export type CategoryProps = {
+  selectedCategory: string | null;
+  isQuizCompleted: boolean;
+  categories:any[];
+  setQuizzes:(categoryId: string) => void;
+ setCategoryName: (categoryName: string) => void;
+}
+
+export interface QuestionsType {
+  questionText: string;
+  option: string[];
+  answer: string;
+  explanation: string;
+}
+
+export interface UserAnswer {
+  question: string;
+  selectedOption: string;
+  answer: string;
+  explanation: string;
+}
+export type QuestionsProps = {
+ selectedQuiz: string | null;
+  shuffledQuestions:QuestionsType[];
+  isQuizCompleted:boolean;
+  currentQuestionIndex:number;
+  timeRemaining:number;
+  handleOptionClick:(opt:string)=> void;
+}
+export type QodeTypeProps = {
+  selectedCategory:string | null;
+  selectedQuiz: string | null;
+  isQuizCompleted: boolean;
+  categoryName:string | null;
+  quizzes:any[];
+   setQuestions: (categoryId: string, quizId: string) => void;
+  setQuizId:(quiz: number) => void;
+}
+
+
+export type QuestCompletionProp = {
+  isQuizCompleted:boolean;
+  score:number;
+  shuffledQuestions:QuestionsType[];
+  userAnswers:UserAnswer[];
+  totalScore:number;
+  replayQuiz:()=> void;
+  reloadPage:()=> void;
+}
+
+export interface QuizStorage {
+  uid: string;
+  quizzesTaken: string[];
+  quizId: string;
+  score: number;
 }

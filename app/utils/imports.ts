@@ -4,14 +4,16 @@ import ImageHolder from "../../public/images/image-holder.png";
 import Auth_BG from "../../public/images/bg-login.svg";
 import Auth_Placeholder from "../../public/images/auth-placeholder.png";
 import Loader from "../../public/loader.gif";
+import DB from "../../public/images/relational.png";
 
 export const IMAGES = {
   Logo,
   Logo_white,
   ImageHolder,
-Auth_BG,
-Auth_Placeholder,
-Loader
+  Auth_BG,
+  Auth_Placeholder,
+  Loader,
+  DB,
 };
 
 export const ROUTES = {
@@ -31,8 +33,8 @@ export const ROUTES = {
   DASHBOARD: "/dashboard",
   PROFILE: "/profile",
   HISTORY: "/history",
-  LEADERBOARD:'/leaderboard',
-  
+  LEADERBOARD: "/leaderboard",
+  Qode: "/qode",
 };
 
 export const NavUrl = [
@@ -88,5 +90,6 @@ export const FooterUrl = [
         label: "Terms of Service",
       },
     ],
-  }
+  },
 ];
+
