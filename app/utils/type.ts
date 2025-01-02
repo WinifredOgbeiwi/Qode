@@ -64,9 +64,16 @@ export interface CategoryType{
   imageUrl:string;
   name:string
 }
+
+export interface QuizzesType{
+  id:string;
+  difficulty:string;
+  name:string;
+}
+
 export type QodeState = {
   categories: CategoryType[];
-  quizzes: string[];
+  quizzes: QuizzesType[];
   questions: QuestionsType[];
   selectedCategory: string | null;
   selectedQuiz: string | null;
@@ -104,7 +111,7 @@ export type QodeTypeProps = {
   selectedQuiz: string | null;
   isQuizCompleted: boolean;
   categoryName:string | null;
-  quizzes:string[];
+  quizzes:QuizzesType[];
    setQuestions: (categoryId: string, quizId: string) => void;
   setQuizId:(quiz: number) => void;
 }
