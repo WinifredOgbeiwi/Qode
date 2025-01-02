@@ -60,8 +60,8 @@ export interface QuestionsType {
 }
 
 export type QodeState = {
-  categories: number[];
-  quizzes: number[];
+  categories: string[];
+  quizzes: string[];
   questions: QuestionsType[];
   selectedCategory: string | null;
   selectedQuiz: string | null;
