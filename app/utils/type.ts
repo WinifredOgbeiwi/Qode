@@ -58,9 +58,14 @@ export interface QuestionsType {
   answer: string;
   explanation: string;
 }
-
+export interface CategoryType{
+  id:string;
+  description:string;
+  imageUrl:string;
+  name:string
+}
 export type QodeState = {
-  categories: string[];
+  categories: CategoryType[];
   quizzes: string[];
   questions: QuestionsType[];
   selectedCategory: string | null;
@@ -73,7 +78,7 @@ export type QodeState = {
 export type CategoryProps = {
   selectedCategory: string | null;
   isQuizCompleted: boolean;
-  categories:number[];
+  categories:CategoryType[];
   setQuizzes:(categoryId: string) => void;
  setCategoryName: (categoryName: string) => void;
 }
@@ -99,7 +104,7 @@ export type QodeTypeProps = {
   selectedQuiz: string | null;
   isQuizCompleted: boolean;
   categoryName:string | null;
-  quizzes:number[];
+  quizzes:string[];
    setQuestions: (categoryId: string, quizId: string) => void;
   setQuizId:(quiz: number) => void;
 }

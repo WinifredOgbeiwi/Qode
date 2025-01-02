@@ -10,7 +10,7 @@ const Category: React.FC<CategoryProps> = ({
   setQuizzes,
   setCategoryName,
 }) => {
-  const [hover, setHover] = useState(null);
+  const [hover, setHover] = useState<string | null>(null);
   return (
     <>
       {!selectedCategory && !isQuizCompleted && (
