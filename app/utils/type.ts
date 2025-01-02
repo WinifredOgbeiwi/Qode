@@ -52,11 +52,17 @@ export interface AuthState {
   setUser: (user: FirebaseUser | null) => void;
   logout: () => void;
 }
+export interface QuestionsType {
+  questionText: string;
+  option: string[];
+  answer: string;
+  explanation: string;
+}
 
 export type QodeState = {
-  categories: unknown[];
-  quizzes: unknown[];
-  questions: unknown[];
+  categories: number[];
+  quizzes: number[];
+  questions: QuestionsType[];
   selectedCategory: string | null;
   selectedQuiz: string | null;
   setCategories: () => void;
@@ -67,17 +73,12 @@ export type QodeState = {
 export type CategoryProps = {
   selectedCategory: string | null;
   isQuizCompleted: boolean;
-  categories:unknown[];
+  categories:number[];
   setQuizzes:(categoryId: string) => void;
  setCategoryName: (categoryName: string) => void;
 }
 
-export interface QuestionsType {
-  questionText: string;
-  option: string[];
-  answer: string;
-  explanation: string;
-}
+
 
 export interface UserAnswer {
   question: string;
@@ -98,7 +99,7 @@ export type QodeTypeProps = {
   selectedQuiz: string | null;
   isQuizCompleted: boolean;
   categoryName:string | null;
-  quizzes:unknown[];
+  quizzes:number[];
    setQuestions: (categoryId: string, quizId: string) => void;
   setQuizId:(quiz: number) => void;
 }
