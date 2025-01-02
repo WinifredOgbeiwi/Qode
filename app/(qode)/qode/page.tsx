@@ -1,6 +1,7 @@
 "use client";
 import { shuffleArray } from "@/app/component/common/Shuffle";
 import Category from "@/app/component/qode/Category";
+import QuestCompletion from "@/app/component/qode/QuestCompletion";
 import Questions from "@/app/component/qode/Questions";
 import Type from "@/app/component/qode/Type";
 import { QuestionsType, UserAnswer } from "@/app/utils/type";
@@ -29,7 +30,7 @@ const Qodepage = () => {
     []
   );
   const [isQuizStarted, setIsQuizStarted] = useState<boolean>(false);
-  const [timeRemaining, setTimeRemaining] = useState<number>(20);
+  const [timeRemaining, setTimeRemaining] = useState<number>(120);
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [quizId, setQuizId] = useState<number | null>(null);
@@ -73,20 +74,32 @@ const Qodepage = () => {
     }
   };
   
-  //   useEffect(() => {
-  //   if (!isQuizStarted || isQuizCompleted) return; 
-  //   if (timeRemaining <= 0) {
-  //     setIsQuizCompleted(true);
-  //     return;
-  //   }
+    useEffect(() => {
+    if (!isQuizStarted || isQuizCompleted) return; 
+    if (timeRemaining <= 0) {
+      setIsQuizCompleted(true);
+      return;
+    }
 
-  //   const timerId = setInterval(() => {
-  //     setTimeRemaining((prevTime) => prevTime - 1);
-  //   }, 1000);
+    const timerId = setInterval(() => {
+      setTimeRemaining((prevTime) => prevTime - 1);
+    }, 1000);
 
-  //   return () => clearInterval(timerId);
-  // }, [isQuizStarted, isQuizCompleted, timeRemaining]);
+    return () => clearInterval(timerId);
+  }, [isQuizStarted, isQuizCompleted, timeRemaining]);
 
+    const replayQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setUserAnswers([]);
+    setIsQuizCompleted(false);
+    setTimeRemaining(20);
+    setIsQuizStarted(false); 
+  };
+
+  const reloadPage = () => {
+    window.location.reload();
+  };
   return (
     <div>
       <Category
@@ -112,6 +125,13 @@ const Qodepage = () => {
         currentQuestionIndex={currentQuestionIndex}
         timeRemaining={timeRemaining}
         handleOptionClick={handleOptionClick}
+      />
+      <QuestCompletion isQuizCompleted={isQuizCompleted}
+      score={score}
+      shuffledQuestions={shuffledQuestions}
+      userAnswers={userAnswers}
+      replayQuiz={replayQuiz}
+      reloadPage={reloadPage}
       />
     </div>
   );

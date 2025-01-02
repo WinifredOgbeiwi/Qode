@@ -104,7 +104,11 @@ export type QodeTypeProps = {
 }
 
 
-// export type QodeButtonProps = {
-// section:any[];
-// onclick: () => void;
-// }
+export type QuestCompletionProp = {
+  isQuizCompleted:boolean;
+  score:number;
+  shuffledQuestions:QuestionsType[];
+  userAnswers:UserAnswer[];
+  replayQuiz:()=> void;
+  reloadPage:()=> void;
+}
