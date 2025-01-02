@@ -8,7 +8,8 @@ import { QuestionsType, UserAnswer } from "@/app/utils/type";
 import { useQodeStore } from "@/store/qodeStore";
 import { useAuthStore } from "@/store/useAuthStore";
 import React, { useEffect, useState } from "react";
-
+import confetti from "canvas-confetti";
+import axios from "axios";
 const Qodepage = () => {
   const { user } = useAuthStore((state) => state);
 
@@ -35,6 +36,14 @@ const Qodepage = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [quizId, setQuizId] = useState<number | null>(null);
   
+     const totalScore = Math.round((score / shuffledQuestions.length) * 100);
+
+      const confettiSettings = {
+  particleCount: 2000,
+  spread: 550,
+   angle:100,
+
+};
   useEffect(() => {
     if (user) setCategories();
   }, [setCategories, user]);
@@ -88,6 +97,26 @@ const Qodepage = () => {
     return () => clearInterval(timerId);
   }, [isQuizStarted, isQuizCompleted, timeRemaining]);
 
+    useEffect(() => {
+    const storeQuizData = async () => {
+      if (isQuizCompleted && quizId !== null && user) {
+        if (totalScore > 50) confetti(confettiSettings);
+        try {
+          await axios.post("/api/database/storequiz", {
+            uid: user.uid,
+            quizId,
+            score,
+          });
+          console.log("Quiz data saved successfully.");
+        } catch (error) {
+          console.error("Error saving quiz data:", error);
+        }
+      }
+    };
+
+    storeQuizData();
+  }, [isQuizCompleted, quizId, score, user, totalScore]);
+
     const replayQuiz = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
@@ -130,6 +159,7 @@ const Qodepage = () => {
       score={score}
       shuffledQuestions={shuffledQuestions}
       userAnswers={userAnswers}
+      totalScore = {totalScore}
       replayQuiz={replayQuiz}
       reloadPage={reloadPage}
       />

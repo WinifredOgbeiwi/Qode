@@ -5,8 +5,8 @@ import { QuestCompletionProp } from '@/app/utils/type';
 import { ROUTES } from '@/app/utils/imports';
 import CircularProgress from '../common/CircleChart';
 
-const QuestCompletion:React.FC<QuestCompletionProp> = ({isQuizCompleted,score,shuffledQuestions,replayQuiz , reloadPage}) => {
-      const totalScore = Math.round((score / shuffledQuestions.length) * 100);
+const QuestCompletion:React.FC<QuestCompletionProp> = ({isQuizCompleted,score,shuffledQuestions,totalScore,replayQuiz , reloadPage}) => {
+
   return (
     <>
              {isQuizCompleted && (

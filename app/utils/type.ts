@@ -109,6 +109,7 @@ export type QuestCompletionProp = {
   score:number;
   shuffledQuestions:QuestionsType[];
   userAnswers:UserAnswer[];
+  totalScore:number;
   replayQuiz:()=> void;
   reloadPage:()=> void;
 }
