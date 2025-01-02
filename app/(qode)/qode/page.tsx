@@ -34,7 +34,7 @@ const Qodepage = () => {
   const [timeRemaining, setTimeRemaining] = useState<number>(120);
   const [score, setScore] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
-  const [quizId, setQuizId] = useState<number | null>(null);
+  const [quizId, setQuizId] = useState<string | null>(null);
 
   const totalScore = Math.round((score / shuffledQuestions.length) * 100);
 

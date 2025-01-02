@@ -53,10 +53,32 @@ export interface AuthState {
   logout: () => void;
 }
 
+export interface Category {
+  id: string;
+  name: string;
+  description: string;
+  imageUrl: string;
+}
+
+export interface Quiz {
+  id: string;
+  difficulty?: string;
+  name?: string;
+}
+
+
+export interface QuestionsType {
+  questionText: string;
+  option: string[];
+  answer: string;
+  explanation: string;
+}
+
+
 export type QodeState = {
-  categories: any[];/* eslint-disable-line no-alert */
-  quizzes: any[];/* eslint-disable-line no-alert */
-  questions: any[];/* eslint-disable-line no-alert */
+  categories: Category[];
+  quizzes: Quiz[];
+  questions: QuestionsType[];
   selectedCategory: string | null;
   selectedQuiz: string | null;
   setCategories: () => void;
@@ -67,17 +89,11 @@ export type QodeState = {
 export type CategoryProps = {
   selectedCategory: string | null;
   isQuizCompleted: boolean;
-  categories:any[];/* eslint-disable-line no-alert */
+  categories:Category[];
   setQuizzes:(categoryId: string) => void;
  setCategoryName: (categoryName: string) => void;
 }
 
-export interface QuestionsType {
-  questionText: string;
-  option: string[];
-  answer: string;
-  explanation: string;
-}
 
 export interface UserAnswer {
   question: string;
@@ -98,9 +114,9 @@ export type QodeTypeProps = {
   selectedQuiz: string | null;
   isQuizCompleted: boolean;
   categoryName:string | null;
-  quizzes:any[];/* eslint-disable-line no-alert */
+  quizzes:Quiz[];
    setQuestions: (categoryId: string, quizId: string) => void;
-  setQuizId:(quiz: number) => void;
+  setQuizId:(quiz: string) => void;
 }
 
 
