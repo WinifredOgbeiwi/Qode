@@ -107,7 +107,6 @@ const Qodepage = () => {
             quizId,
             score,
           });
-          console.log("Quiz data saved successfully.");
         } catch (error) {
           console.error("Error saving quiz data:", error);
         }

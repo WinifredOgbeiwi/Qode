@@ -113,3 +113,10 @@ export type QuestCompletionProp = {
   replayQuiz:()=> void;
   reloadPage:()=> void;
 }
+
+export interface QuizStorage {
+  uid: string;
+  quizzesTaken: string[];
+  quizId: string;
+  score: number;
+}
