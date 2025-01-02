@@ -113,7 +113,7 @@ const Qodepage = () => {
     };
 
     storeQuizData();
-  }, [isQuizCompleted, quizId, score, user, totalScore]);
+  }, [isQuizCompleted, quizId, score, user, totalScore,confettiSettings]);
 
   const replayQuiz = () => {
     setCurrentQuestionIndex(0);
