@@ -48,7 +48,7 @@ const QuestCompletion:React.FC<QuestCompletionProp> = ({isQuizCompleted,score,sh
                   );
                 })}
               </ul> */}
-              <div className="flex gap-5 w-full justify-between items-center mb-4">
+              <div className="flex flex-col md:flex-row gap-5 w-full justify-between items-center mb-4">
                 <Button onclick={replayQuiz} label="Replay Quiz" variant="primary" color='bg-[#CEE74C]' />
                 <Button onclick={reloadPage} label="Start new Quiz" variant="primary" color='bg-[#f582de]' />
               </div>
