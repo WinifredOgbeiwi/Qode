@@ -34,7 +34,7 @@ const LoginPage = () => {
       });
 
       if (res?.user) {
-        router.push(ROUTES.DASHBOARD);
+        router.push(ROUTES.Qode);
       } else {
         console.error("Login failed");
         toast.error("Login failed. Please try again.", {
