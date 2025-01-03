@@ -4,7 +4,7 @@ import ButtonLink from "../common/ButtonLink";
 const Hero = () => {
   return (
     <div className="text-center md:w-1/2 w-full m-auto ">
-      <h1 className="text-7xl leading-tight font-extrabold">
+      <h1 className="text-7xl mx-2 leading-tight font-extrabold">
         Test Your Knowledge,
         <br />
         Challenge Your Mind!
