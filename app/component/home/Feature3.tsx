@@ -14,7 +14,7 @@ const Feature3 = () => {
         />
 
         <div className="md:w-[50%] mt-10 md:mt-0">
-          <h2 className="text-7xl max-[900px]:text-5xl font-bold">QUIZ HISTORY!</h2>
+          <h2 className="text-7xl max-[900px]:text-5xl font-bold"> HISTORY!</h2>
           <h2 className="max-[900px]:text-2xl text-4xl font-bold mt-4">Track Your Journey!</h2>
           <p className="my-6">
             Want to see how you have been improving? Our Quiz History feature lets you review past quizzes, track your scores, and monitor your performance over time.
