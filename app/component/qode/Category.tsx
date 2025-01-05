@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import { IMAGES } from "@/app/utils/imports";
 import { CategoryProps } from "@/app/utils/type";
+import Image from "next/image";
 
 const Category: React.FC<CategoryProps> = ({
   selectedCategory,
@@ -44,7 +43,8 @@ const Category: React.FC<CategoryProps> = ({
                     hover === category.id ? "-translate-x-[0.2rem] -translate-y-[0.2rem]" : ""
                   } px-5 py-3 border-2 text-2xl border-black capitalize transition-all duration-300 bg-[#FC9CE9] h-52 flex flex-col justify-center items-center gap-3 `}
                 >
-                  <img src={category.imageUrl} alt={category.name} className="w-24"  />
+                  <Image src={category.imageUrl} alt={category.name} className="w-24"  />
+                
                   {/* <Image src={category.imageUrl} width={20} height={20} alt={category.name} className="w-20" /> */}
                   {category.name}
                 </span>
